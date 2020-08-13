@@ -1,0 +1,38 @@
+@import '@/commonStyles.scss';
+
+.top-menu{
+	padding-top: 10px;
+	&__content{
+		height: 60px;
+		font-family: 'mExtraBold';
+		font-size: 17px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: white;
+		border-bottom: 2px black solid;
+		@include horizontal-edge-padding;
+
+		&__cart{
+			position: relative;
+			&--filled{
+				&:after{ 
+					position: absolute;
+					content:attr(data-count);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					$diameter:24px;
+					width: $diameter;
+					height: $diameter;
+					top:-7px;
+					right:-16px;
+					background-color:$PURPLE;
+					border: 2px solid black;
+					border-radius: 50%;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}

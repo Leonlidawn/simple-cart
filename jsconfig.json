@@ -1,0 +1,4 @@
+{
+	"exclude": ["node_modules", "build", "coverage", "dist", "lib"],
+	"extends": "./jsconfig.paths.json"
+}
