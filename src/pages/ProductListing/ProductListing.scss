@@ -1,0 +1,18 @@
+@import '@/commonStyles.scss';
+
+.product-listing{
+	padding-top: 10px;
+	&__category-section{
+		display: flex;
+		margin-bottom: 10px;
+	}
+	&__product-section{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		&__product:not(:last-child){
+			margin-bottom: 5px;;
+			border-bottom: 2px $GRAY solid;
+		}
+	}
+}

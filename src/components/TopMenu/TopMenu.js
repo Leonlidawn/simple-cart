@@ -3,7 +3,7 @@ import './TopMenu.scss';
 import { ReactComponent as CartIcon } from './cart.svg'
 import { Link } from 'react-router-dom';
 
-const TopMenu = ( count ) => {
+const TopMenu = ({ count }) => {
 	const countProp = count>0 ? { "data-count": count } : {};
 	return (
 		<div className="top-menu">

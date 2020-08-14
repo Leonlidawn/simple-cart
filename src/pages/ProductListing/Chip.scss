@@ -1,0 +1,24 @@
+@import '@/commonStyles.scss';
+.chip{
+	width: fit-content;
+	@include thick-border;
+	margin:4px 10px;
+	border-radius: 18px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'mExtraBold';
+	font-size: 12px;
+	min-width: 36px;
+	padding: 8px;
+
+	&--selected{
+		background-color: $PINK;
+	}
+	.cross{
+		margin-left: 4px;
+	}
+	&:hover{
+		cursor: pointer;
+	}
+}

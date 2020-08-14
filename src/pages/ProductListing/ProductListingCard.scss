@@ -1,0 +1,33 @@
+@import '@/commonStyles.scss';
+
+.product-listing-card{
+	padding-top: 10px;
+	display: flex;
+
+	.product{
+		&__info{
+			display: flex;
+			flex-direction: column;
+			
+		}
+
+		&__image{
+			@include roundered-corner-border;
+			width: 100px;
+			height: 120px;
+			background: var(--bg-color);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			img{
+				width:80px;
+				height:82px;
+			}
+		}
+
+		&__price{
+			align-self: flex-end;
+			background-color: red;
+		}
+	}
+}

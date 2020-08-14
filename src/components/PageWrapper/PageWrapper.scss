@@ -1,0 +1,12 @@
+@import '@/commonStyles.scss';
+
+.page-wrapper{
+	@include horizontal-edge-padding;
+	padding-top: 20px;
+}
+
+.page-title{
+	font-family: 'mExtraBold';
+	font-size:27px;
+	margin-bottom: 10px;
+}

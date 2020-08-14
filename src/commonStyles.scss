@@ -2,4 +2,21 @@
 @mixin horizontal-edge-padding{
 	padding:0 25px;
 }
+
+@mixin roundered-corner-border{
+	border-radius: 16px;
+	@include thick-border;
+}
+
+@mixin thick-border{
+	border:2px solid $BLACK;
+}
+
 $PURPLE:#E9E7FC;
+$BLACK:#18191F;
+$WHITE:#FFFFFF;
+$YELLOW:#FFBD12;
+$RED:#F95A2C;
+$BLUE:#1947E5;
+$PINK:#FFC7DE;
+$GRAY:#A1A1A1;
