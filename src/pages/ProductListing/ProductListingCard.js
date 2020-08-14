@@ -1,9 +1,9 @@
 import React from 'react';
+import QuantityButton from './QuantityButton';
 import './ProductListingCard.scss';
 
 
-const ProductListinProductListingCardg = ({ product }) => {
-
+const ProductListingCard = ({ product }) => {
 	const { id, name, category, price, bgColor } = product;
 	const image = require(`@/images/${id}.png`);
 
@@ -13,19 +13,22 @@ const ProductListinProductListingCardg = ({ product }) => {
 				<img src={image} />
 			</div>
 
-			<div product="product__info">
-				<div className="product__category">
+			<div className="product__info">
+				<div className="product__info__category">
 					{category}
 				</div>
-				<div className="product__title">
+				<div className="product__info__title">
 					{name}
 				</div>
-				<div className="product__price">
-					{price}
+				<div className="flex-group">
+					<div className="product__info__price">
+						{price}
+					</div>
+					<QuantityButton productId={id} />
 				</div>
 			</div>
 		</div>
 	)
 }
 
-export default ProductListinProductListingCardg;
+export default ProductListingCard;

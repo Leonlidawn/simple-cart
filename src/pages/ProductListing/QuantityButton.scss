@@ -1,0 +1,27 @@
+@import '@/commonStyles.scss';
+
+.quantity-button{
+	@include thick-border;
+	width: fit-content;
+	border-radius: 11px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $YELLOW;
+	$verticle-padding: 4px;
+	user-select: none;
+
+	&__text{
+		padding: $verticle-padding 6px $verticle-padding 12px; 
+		font-family: 'mExtraBold';
+		font-size: 17px;
+	}
+	&__icon-area{
+		background-color: white;
+		padding: $verticle-padding 6px; 
+	}
+	&:hover{
+		cursor: pointer;
+	}
+}

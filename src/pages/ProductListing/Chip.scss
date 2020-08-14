@@ -2,7 +2,7 @@
 .chip{
 	width: fit-content;
 	@include thick-border;
-	margin:4px 10px;
+	margin:4px 8px;
 	border-radius: 18px;
 	display: flex;
 	justify-content: center;
@@ -11,7 +11,8 @@
 	font-size: 12px;
 	min-width: 36px;
 	padding: 8px;
-
+	user-select: none;
+	transition: all 0.2s;
 	&--selected{
 		background-color: $PINK;
 	}

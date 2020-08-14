@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="16px" viewBox="0 0 15 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>plus</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="button-/-small-/-stepper---2" transform="translate(-69.000000, -10.000000)">
+            <rect id="shadow" x="0" y="0" width="94" height="36" rx="12"></rect>
+            <g id="bg" fill="#FFFFFF">
+                <path d="M62,0 L82,0 C88.627417,-1.21743675e-15 94,5.372583 94,12 L94,24 C94,30.627417 88.627417,36 82,36 L62,36 L62,36 L62,0 Z" id="white"></path>
+            </g>
+            <path d="M76.5,10.5 C77.3284271,10.5 78,11.1715729 78,12 L78,16.5 L82.5,16.5 C83.3284271,16.5 84,17.1715729 84,18 C84,18.8284271 83.3284271,19.5 82.5,19.5 L78,19.5 L78,24 C78,24.8284271 77.3284271,25.5 76.5,25.5 C75.6715729,25.5 75,24.8284271 75,24 L75,19.5 L70.5,19.5 C69.6715729,19.5 69,18.8284271 69,18 C69,17.1715729 69.6715729,16.5 70.5,16.5 L75,16.5 L75,12 C75,11.1715729 75.6715729,10.5 76.5,10.5 Z" id="plus" fill="#18191F"></path>
+            <rect id="outline" stroke="#18191F" stroke-width="2" x="1" y="1" width="92" height="34" rx="12"></rect>
+        </g>
+    </g>
+</svg>

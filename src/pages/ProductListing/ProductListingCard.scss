@@ -3,14 +3,9 @@
 .product-listing-card{
 	padding-top: 10px;
 	display: flex;
-
+	@include horizontal-edge-padding;
+	flex-grow: 1;
 	.product{
-		&__info{
-			display: flex;
-			flex-direction: column;
-			
-		}
-
 		&__image{
 			@include roundered-corner-border;
 			width: 100px;
@@ -24,10 +19,39 @@
 				height:82px;
 			}
 		}
-
-		&__price{
-			align-self: flex-end;
-			background-color: red;
+		&__info{
+			display: flex;
+			flex-grow: 1;
+			flex-direction: column;
+			min-height: 100%;
+			margin-left:16px;
+			&__category{
+				display: flex;
+				font-family: 'mBold';
+				font-size: 15;
+			}
+			&__title{
+				display: flex;
+				flex-grow: 1;
+				font-family: 'mBold';
+				font-size: 21px;
+			}
+			&__price{
+				display: flex;
+				align-items: center;
+				flex-shrink: 0;
+				font-size: 24px;
+				font-family: 'mExtraBold';
+				margin-right:10px;
+				&::before{
+					content:'$';
+				}
+			}
 		}
+
+	}
+	.flex-group{
+		display: flex;
+		justify-content: space-between;
 	}
 }

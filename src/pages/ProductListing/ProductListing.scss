@@ -3,16 +3,28 @@
 .product-listing{
 	padding-top: 10px;
 	&__category-section{
+		@include horizontal-edge-padding;
 		display: flex;
 		margin-bottom: 10px;
+		&>div:first-child{
+			.chip{
+				margin-left: 0;
+			}
+		}
 	}
 	&__product-section{
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		&__product:not(:last-child){
-			margin-bottom: 5px;;
-			border-bottom: 2px $GRAY solid;
+		margin-bottom: 10px;
+		&__product{
+			display: flex;
+			min-width: 100%;
+			margin-bottom: 20px;
+			padding-bottom: 20px;
+			&:not(:last-child){
+				border-bottom: 2px $GRAY solid;
+			}
 		}
 	}
 }
