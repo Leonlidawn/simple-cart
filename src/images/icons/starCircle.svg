@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="50px" viewBox="0 0 48 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Symbols</title>
+    <defs>
+        <circle id="path-1" cx="24" cy="24" r="24"></circle>
+        <filter x="-2.1%" y="-2.1%" width="104.2%" height="108.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="SourceAlpha" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <path d="M21.8077957,20.7026239 C21.6622559,20.9974714 21.3810707,21.2019307 21.0557165,21.2494861 L16.1495,21.9666031 L19.6988211,25.4236419 C19.9346949,25.6533829 20.0423575,25.9845141 19.986697,26.3090433 L19.1492691,31.1916734 L23.5356371,28.8849265 C23.8270199,28.7316912 24.1751567,28.7316912 24.4665396,28.8849265 L28.8529075,31.1916734 L28.0154797,26.3090433 C27.9598192,25.9845141 28.0674818,25.6533829 28.3033555,25.4236419 L31.8526767,21.9666031 L26.9464601,21.2494861 C26.6211059,21.2019307 26.3399207,20.9974714 26.194381,20.7026239 L24.0010883,16.2592543 L21.8077957,20.7026239 Z M20.246827,19.3464661 L23.104381,13.5573761 C23.4712164,12.814208 24.5309603,12.814208 24.8977957,13.5573761 L27.7553497,19.3464661 L34.1457165,20.2805139 C34.9656312,20.4003567 35.2924147,21.408198 34.6988211,21.9863581 L30.0756101,26.4893656 L31.166697,32.8509567 C31.3068155,33.6679189 30.4492666,34.2908819 29.7156371,33.9050735 L24.0010883,30.8998497 L18.2865396,33.9050735 C17.55291,34.2908819 16.6953612,33.6679189 16.8354797,32.8509567 L17.9265665,26.4893656 L13.3033555,21.9863581 C12.709762,21.408198 13.0365454,20.4003567 13.8564601,20.2805139 L20.246827,19.3464661 Z" id="path-3"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bg">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <circle stroke="#18191F" stroke-width="2" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" cx="24" cy="24" r="23"></circle>
+        </g>
+        <mask id="mask-4" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <use id="Shape" fill="#000000" fill-rule="nonzero" xlink:href="#path-3"></use>
+    </g>
+</svg>

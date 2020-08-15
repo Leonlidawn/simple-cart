@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
-import ToggleOn from '@/images/icons/toggle-off.svg';
-import ToggleOff from '@/images/icons/toggle-on.svg';
+import ToggleOff from '@/images/icons/toggle-off.svg';
+import ToggleOn from '@/images/icons/toggle-on.svg';
 
 const Toggle = ({value, onClick}) => {
 	const [isToggleOn,setIsToggleOn] = useState(value);
@@ -9,7 +9,7 @@ const Toggle = ({value, onClick}) => {
 	}
 	return (
 		<div className={`toggle ${isToggleOn?'toggle--on':''}`} onClick={onClick? ()=>{defaultHandleOnClick();onClick();} : defaultHandleOnClick}>
-			<img src={isToggleOn? ToggleOn : ToggleOff}/>
+			<img alt='toggle icon' src={isToggleOn? ToggleOn : ToggleOff}/>
 		</div>
 	)
 }

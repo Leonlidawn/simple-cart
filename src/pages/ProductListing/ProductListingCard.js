@@ -10,7 +10,7 @@ const ProductListingCard = ({ product }) => {
 	return (
 		<div className="product-listing-card">
 			<div className="product__image" style={{ '--bg-color': bgColor }}>
-				<img src={image} />
+				<img alt={name} src={image} />
 			</div>
 
 			<div className="product__info">

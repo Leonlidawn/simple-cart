@@ -37,7 +37,7 @@ const Cart = () => {
 				</div>
 				<Link to='/checkout' className="cart__checkout-button" >
 						<span className="cart__checkout-button__text">Buy Now</span>
-						<img src={RightArrow}/>
+						<img alt='right arrow' src={RightArrow}/>
 				</Link>
 			</div>
 		</div>

@@ -5,7 +5,6 @@ import TopMenu from './components/TopMenu/TopMenu';
 import ProductListing from './pages/ProductListing/ProductListing';
 import Cart from './pages/Cart/Cart';
 import Checkout from './pages/Checkout/Checkout';
-import OrderConfirmation from './pages/OrderConfirmation/OrderConfirmation';
 import { CartContext } from './contexts';
 import { addToCartSession, reduceFromCartSession, clearCartSession, getCartSession } from '@/utils/cartSession';
 import { products } from '@/data/products.json';
@@ -53,7 +52,6 @@ function App() {
 					<Route exact path="/products" component={()=>PageWrapper('Products',<ProductListing/>)} />
 					<Route exact path="/cart" component={()=>PageWrapper('Cart',<Cart/>)} />
 					<Route exact path="/checkout" component={()=>PageWrapper('Checkout',<Checkout/>)} />
-					<Route exact path="/order-confirmation" component={()=>PageWrapper('Order Confirmation',<OrderConfirmation/>)} />
 				</Switch>
 			</CartContext.Provider>
 		</div>

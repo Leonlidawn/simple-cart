@@ -28,15 +28,19 @@
 		}
 		.condition{
 			margin: 20px 0;
-			display: flex;
-			align-items: center;
-			font-size: 9px;
-			span{
-				margin-left:8px;
+			&__content{
+				display: flex;
+				align-items: center;
+				font-size: 9px;
+				flex-wrap: wrap;
+				span{
+					margin-left:8px;
+				}
 			}
 		}
 		&__error{
-			margin-top: 4px;
+			line-height: 0;
+			margin-top: 8px;
 			margin-left: 10px;
 			font-size: 12px;
 			font-family: 'mMedium';
