@@ -10,7 +10,7 @@ const OrderConfirmation = ({ id }) => {
 			<div className="card">
 				<div className="card__body">
 					<p>
-					<img src={Star} />
+					<img alt="star badge" src={Star} />
 						<em>Your order has been processed</em>
 					</p>
 					<p>

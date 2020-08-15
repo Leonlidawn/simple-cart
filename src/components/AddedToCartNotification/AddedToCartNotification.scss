@@ -1,0 +1,50 @@
+@import '@/commonStyles';
+
+@keyframes fade-in-up{
+	from{
+		opacity: 0.7;
+		transform: translateY(50%)
+	}
+	to{
+		opacity: 1;
+		transform: translateY(0)
+	}
+}
+@keyframes fade-out-down{
+	from{
+		opacity: 1;
+		transform: translateY(0)
+	}
+	to{
+		opacity: 0;
+		transform: translateY(50%)
+	}
+}
+
+.added-to-cart-notification{
+	@include roundered-corner-border;
+	@include thick-border-bottom;
+	margin: 20px;
+	width: 300px;
+	background-color: var(--bg-color);
+	height: 50px;
+	padding:20px;
+	display: flex;
+	align-content: center;
+	animation: forwards fade-in-up 0.4s ease-out;
+	&--removed{
+		animation: forwards fade-out-down 0.4s ease-in;
+	}
+	&__remove-icon{
+		float: right;
+		margin-top:-18px;
+		margin-right: -18px;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+	font-family: 'mSemiBold';
+	em{
+		font-family: 'mExtraBold';
+	}
+}

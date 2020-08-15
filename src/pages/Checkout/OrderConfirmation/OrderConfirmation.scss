@@ -8,11 +8,11 @@
 	.card{
 		overflow: hidden;
 		@include roundered-corner-border;
+		@include thick-border-bottom;
 		background-color: $YELLOW;
 		padding-top: 80px;
 		width: 300px;
 		display: flex;
-		border-bottom-width: 6px;;
 		&__body{
 			background-color: $WHITE;
 			align-content: center;

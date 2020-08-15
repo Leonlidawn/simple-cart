@@ -25,6 +25,10 @@
 				background-color: $BLUE;
 				color:$WHITE;
 			}
+			&:focus{
+				outline: none;
+				box-shadow: 0px 0px 6px 0px $LIGHT_BLUE;
+			}
 		}
 		.condition{
 			margin: 20px 0;
@@ -44,7 +48,7 @@
 			margin-left: 10px;
 			font-size: 12px;
 			font-family: 'mMedium';
-			color:red;
+			color:$RED;
 		}
 	}
 }

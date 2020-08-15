@@ -8,8 +8,6 @@ import './Checkout.scss';
 
 const Checkout = () => {
 	const { getTotalPrice, cart } = useContext(CartContext);
-	const [name, setName] = useState('');
-	const [email, setEmail] = useState('');
 	const [agree, setAgree] = useState(false);
 
 	const [nameError, setNameError] = useState('');
@@ -92,30 +90,38 @@ const Checkout = () => {
 		//TODO implement backend, success
 	}
 
-	const CheckoutForm = () => (
+	//just an expression, in this way form is not rerendered everytime so that focus is preserved
+	const CheckoutForm =(
 		<div className="checkout">
 			<form id="checkout__form" className="checkout__form">
 				<label>
 					Your name
-					</label>
-				<input onChange={(e) => validateName(e.target.value)} type="text" name="name" placeholder="e.g Jane Doe" data-error-message='' />
+				</label>
+				<input key="name" onChange={(e) => validateName(e.target)} type="text" name="name" placeholder="e.g Jane Doe" />
 				<span className="checkout__form__error">{nameError}</span>
 				<label>
 					Your email
-					</label>
-				<input onChange={(e) => validateEmail(e.target.value)} type="text" name="email" placeholder="e.g jane@company.co" data-error-message='' />
+				</label>
+				<input key="email" onChange={(e) => validateEmail(e.target.value)} type="text" name="email" placeholder="e.g jane@company.co" />
 				<span className="checkout__form__error">{emailError}</span>
 				<div className="condition">
 					<div className="condition__content">
-						<Toggle />	<span>I agree to the terms and conditions</span>
+						<Toggle onClick={()=>setAgree(!agree)}/>	<span>I agree to the terms and conditions</span>
 					</div>
 					<span className="checkout__form__error">{agreeError}</span>
 				</div>
 				<input type="submit" value={`Pay $${getTotalPrice()}`} />
 			</form>
-		</div>
-	);
-	return isEmpty(orderId) ? <CheckoutForm /> : <OrderConfirmation id={orderId} />;
+		</div>)
+	return (
+		<>
+			{
+				isEmpty(orderId)
+					? CheckoutForm
+					: <OrderConfirmation id={orderId} />
+			}
+		</>
+	)
 }
 
 export default Checkout;

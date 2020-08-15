@@ -8,6 +8,10 @@
 	@include thick-border;
 }
 
+@mixin thick-border-bottom {
+	border-bottom-width: 6px
+}
+
 @mixin thick-border{
 	border:2px solid $BLACK;
 }
@@ -18,5 +22,6 @@ $WHITE:#FFFFFF;
 $YELLOW:#FFBD12;
 $RED:#F95A2C;
 $BLUE:#1947E5;
+$LIGHT_BLUE:#74b9f1;
 $PINK:#FFC7DE;
 $GRAY:#A1A1A1;

@@ -5,10 +5,12 @@ import TopMenu from './components/TopMenu/TopMenu';
 import ProductListing from './pages/ProductListing/ProductListing';
 import Cart from './pages/Cart/Cart';
 import Checkout from './pages/Checkout/Checkout';
+import AddedToCartNotification from './components/AddedToCartNotification/AddedToCartNotification';
 import { CartContext } from './contexts';
 import { addToCartSession, reduceFromCartSession, clearCartSession, getCartSession } from '@/utils/cartSession';
 import { products } from '@/data/products.json';
 import './App.scss';
+import ToastMaker from './components/ToastMaker/ToastMaker';
 
 function App() {
 	const [cart, setCart] = useState(getCartSession());
@@ -39,6 +41,10 @@ function App() {
 			return table;
 		},{}
 	);
+
+	ToastMaker.makeToast((props)=><AddedToCartNotification {...props} product={products[0]}/>,1)
+	ToastMaker.makeToast((props)=><AddedToCartNotification {...props} product={products[1]}/>,1)
+	ToastMaker.makeToast((props)=><AddedToCartNotification {...props} product={products[2]}/>,1)
 
 	return (
 		<div className="App">
