@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 const styles = {
-	width: '100vw',
-	height: '100vh',
+	width: 'fit-content',
 	position: 'fixed',
-	top:'0px',
+  bottom: '0px',
 	zIndex: 10,
 	display:'flex',
 	alignItems:'flex-end',
-	justifyContent:'center'
+	left:'50%',
+	transform: 'translateX(-50%)'
 }
 
 function makeToast(Component) {

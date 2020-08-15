@@ -6,11 +6,11 @@ import ProductListing from './pages/ProductListing/ProductListing';
 import Cart from './pages/Cart/Cart';
 import Checkout from './pages/Checkout/Checkout';
 import AddedToCartNotification from './components/AddedToCartNotification/AddedToCartNotification';
+import ToastMaker from './components/ToastMaker/ToastMaker';
 import { CartContext } from './contexts';
 import { addToCartSession, reduceFromCartSession, clearCartSession, getCartSession } from '@/utils/cartSession';
 import { products } from '@/data/products.json';
 import './App.scss';
-import ToastMaker from './components/ToastMaker/ToastMaker';
 
 function App() {
 	const [cart, setCart] = useState(getCartSession());
@@ -18,6 +18,7 @@ function App() {
 	const addToCart = (productId) =>{
 		addToCartSession(productId);
 		setCart(getCartSession);
+		ToastMaker.makeToast((props)=><AddedToCartNotification {...props} product={productTable[productId]}/>)
 	}
 	const reduceFromCart = (productId) =>{
 		reduceFromCartSession(productId);
@@ -42,17 +43,13 @@ function App() {
 		},{}
 	);
 
-	ToastMaker.makeToast((props)=><AddedToCartNotification {...props} product={products[0]}/>,1)
-	ToastMaker.makeToast((props)=><AddedToCartNotification {...props} product={products[1]}/>,1)
-	ToastMaker.makeToast((props)=><AddedToCartNotification {...props} product={products[2]}/>,1)
-
+	
 	return (
 		<div className="App">
 			<CartContext.Provider value = {{cart, addToCart, reduceFromCart, clearCart, getTotalPrice, products, productTable}}>
 				<header>
 					<TopMenu />
 				</header>
-
 				<Switch>
 					<Route exact path="/" component={()=><Redirect to='/products'/>} />
 					<Route exact path="/products" component={()=>PageWrapper('Products',<ProductListing/>)} />

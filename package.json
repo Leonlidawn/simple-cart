@@ -38,6 +38,7 @@
   "devDependencies": {
     "customize-cra": "^1.0.0",
     "lodash": "^4.17.20",
+    "minimist": "^1.2.5",
     "react-app-rewired": "^2.1.6",
     "sass": "^1.26.10"
   }
