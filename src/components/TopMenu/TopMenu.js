@@ -8,7 +8,6 @@ const TopMenu = () => {
 	const {cart} = useContext(CartContext)
 	const count = Object.values(cart).reduce(
 		(count, productQuantity) => {
-			console.log(productQuantity);
 			return count + productQuantity;
 		}, 0
 	);

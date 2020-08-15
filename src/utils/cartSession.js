@@ -18,7 +18,8 @@ const reduceFromCartSession = (productId) => {
 	if (!isEmpty(cart)){
 		const quantity = cart[productId];
 		if (quantity > 0) {
-			sessionHelper.updateSession(productId, quantity - 1);
+			cart[productId] = quantity - 1;
+			sessionHelper.updateSession(CART, cart);
 		}
 	}
 }

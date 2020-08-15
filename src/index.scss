@@ -7,6 +7,10 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.price::before{
+		content:'$';
+}
+
 @font-face {
 	font-family: 'mBlack';
 	src: url('./fonts/Montserrat-Black.ttf');

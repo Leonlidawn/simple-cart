@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import './ProductListing.scss';
-import Chip from './Chip';
-
-import { products } from '@/data/products.json';
+import React, { useState, useContext } from 'react';
 import { unique } from '@/utils/utils';
 import ProductListingCard from './ProductListingCard';
+import Chip from './Chip';
+import { CartContext } from '@/contexts';
+import './ProductListing.scss';
+
 const ProductListing = () => {
+	const { products } = useContext(CartContext);
 	const categoryList = unique(['All', ...products.map((product) => product.category)]);
 	const [selectedList, setSelectedList] = useState([]);
 

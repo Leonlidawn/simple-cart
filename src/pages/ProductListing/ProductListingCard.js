@@ -17,12 +17,12 @@ const ProductListingCard = ({ product }) => {
 				<div className="product__info__category">
 					{category}
 				</div>
-				<div className="product__info__title">
+				<div className="product__info__name">
 					{name}
 				</div>
 				<div className="flex-group">
-					<div className="product__info__price">
-						{price}
+					<div className="product__info__price price">
+						{Math.round(price)}
 					</div>
 					<QuantityButton productId={id} />
 				</div>

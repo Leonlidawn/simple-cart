@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="50px" viewBox="0 0 48 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Cross in Circle</title>
+    <defs>
+        <circle id="path-1" cx="24" cy="24" r="24"></circle>
+        <filter x="-2.1%" y="-2.1%" width="104.2%" height="108.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="SourceAlpha" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1"></feColorMatrix>
+        </filter>
+        <path d="M23.031631,5.76256313 C23.6952172,6.40326705 23.7366914,7.41717319 23.1560535,8.10452739 L23.031631,8.23743687 L17.0635,14 L23.031631,19.7625631 C23.7394563,20.4459806 23.7394563,21.5540194 23.031631,22.2374369 C22.3680448,22.8781408 21.3179278,22.9181848 20.6060252,22.3575689 L20.468369,22.2374369 L14.4995,16.475 L8.53163104,22.2374369 C7.82380576,22.9208544 6.67619424,22.9208544 5.96836896,22.2374369 C5.30478276,21.596733 5.26330862,20.5828268 5.84394655,19.8954726 L5.96836896,19.7625631 L11.9355,14 L5.96836896,8.23743687 C5.26054368,7.55401936 5.26054368,6.44598064 5.96836896,5.76256313 C6.63195516,5.12185922 7.68207224,5.08181522 8.3939748,5.64243115 L8.53163104,5.76256313 L14.4995,11.524 L20.468369,5.76256313 C21.1761942,5.07914562 22.3238058,5.07914562 23.031631,5.76256313 Z" id="path-3"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bg">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <circle stroke="#18191F" stroke-width="2" stroke-linejoin="square" fill="#FFFFFF" fill-rule="evenodd" cx="24" cy="24" r="23"></circle>
+        </g>
+        <g id="feather/cross-2" transform="translate(10.000000, 10.000000)">
+            <mask id="mask-4" fill="white">
+                <use xlink:href="#path-3"></use>
+            </mask>
+            <use id="Combined-Shape" fill="#18191F" fill-rule="nonzero" xlink:href="#path-3"></use>
+            <g id="Group" mask="url(#mask-4)" fill="#18191F">
+                <g id="COLOR/-black">
+                    <rect id="Rectangle" x="0" y="0" width="29" height="28"></rect>
+                </g>
+            </g>
+            <g id="Group" mask="url(#mask-4)" fill="#18191F">
+                <g id="COLOR/-black">
+                    <rect id="Rectangle" x="0" y="0" width="29" height="28"></rect>
+                </g>
+            </g>
+            <g id="Group" mask="url(#mask-4)" fill="#18191F">
+                <g id="COLOR/-black">
+                    <rect id="Rectangle" x="0" y="0" width="29" height="28"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

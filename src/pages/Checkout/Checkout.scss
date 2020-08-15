@@ -1,0 +1,46 @@
+@import '@/commonStyles';
+
+.checkout{
+	@include horizontal-edge-padding;
+	display: flex;
+	justify-content: center;
+	font-family: 'mExtraBold';
+
+	&__form{
+		display: flex;
+		flex-direction: column;
+		max-width: 400px;
+		label{
+			font-size: 14px;
+			padding: 10px 0;
+		}
+		input{
+			@include roundered-corner-border;
+			font-family: 'mRegular';
+			height: 46px;
+			font-size: 18px;
+			padding:0 20px;
+			&[type="submit"]{
+				font-family: 'mExtraBold';
+				background-color: $BLUE;
+				color:$WHITE;
+			}
+		}
+		.condition{
+			margin: 20px 0;
+			display: flex;
+			align-items: center;
+			font-size: 9px;
+			span{
+				margin-left:8px;
+			}
+		}
+		&__error{
+			margin-top: 4px;
+			margin-left: 10px;
+			font-size: 12px;
+			font-family: 'mMedium';
+			color:red;
+		}
+	}
+}

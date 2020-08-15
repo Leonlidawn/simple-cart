@@ -1,0 +1,86 @@
+@import '@/commonStyles';
+
+.cart{
+	@include horizontal-edge-padding;
+	display: flex;
+	flex-direction: column;
+
+	&__items{
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+		.product-card{
+			@include roundered-corner-border;
+			position: relative;
+			border-bottom-width: 4px;
+			display: flex;
+			flex-direction: column;
+			background-color: var(--bg-color);
+			padding:20px;
+			width: 280px;
+			min-height: 100px;
+			margin: 10px 0;
+			&__remove-icon{
+				position: absolute;
+				right: 2px;
+				top: 2px;
+				:hover{
+					cursor: pointer;
+				}
+			}
+			&__name{
+				width: 200px;
+				margin-bottom: 20px;
+				line-height: 24px;
+				font-family: 'mBold';
+				font-size: 21px;
+				flex-grow: 1;
+				white-space: pre-wrap;
+				word-break: keep-all;
+			}
+			&__price{
+				display: flex;
+				flex-shrink: 0;
+				align-items: center;
+				flex-shrink: 0;
+				font-size: 24px;
+				font-family: 'mExtraBold';
+				margin-right:10px;
+			}
+		}
+	}
+	&__bottom-section{
+		@include horizontal-edge-padding;
+		display: flex;
+		align-self: flex-end;
+		justify-content: space-between;
+		align-items: center;
+		margin-top:50px;
+		width:280px;
+
+	}
+	&__total-price{
+		font-size: 38px;
+		margin-right: 20px;
+	}
+	&__checkout-button{
+		@include roundered-corner-border;
+		background-color: $BLACK;
+		width: 300px;
+		display: flex;
+		align-content: center;
+		font-family: 'mExtraBold';
+		font-size: 21px;
+		padding:15px;
+		&__text{
+			color:$WHITE;
+		}
+		img{
+			margin-left: 12px;
+		}
+		&:hover{
+			cursor: pointer;
+		}
+	}
+	
+}
