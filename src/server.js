@@ -13,5 +13,5 @@ app.get('*', (req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log('client listening to port localhost:' + PORT);
+  console.log('frontend server listening to port:' + PORT);
 })
