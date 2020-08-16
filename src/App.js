@@ -57,7 +57,7 @@ function App() {
 					<Route exact path="/products" component={()=>PageWrapper('Products',<ProductListing/>)} />
 					<Route exact path="/cart" component={()=>PageWrapper('Cart',<Cart/>)} />
 					<Route exact path="/checkout" component={()=>PageWrapper('Checkout',<Checkout/>)} />
-					<Route exact path="/order-confirmation" component={()=>PageWrapper('OrderConfirmation',<OrderConfirmation/>)} />
+					<Route exact path="/order-confirmation" component={()=>PageWrapper('Order Confirmation',<OrderConfirmation/>)} />
 				</Switch>
 			</CartContext.Provider>
 		</div>

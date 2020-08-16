@@ -3,6 +3,7 @@ import { unique } from '@/utils/utils';
 import ProductListingCard from './ProductListingCard';
 import Chip from './Chip';
 import { CartContext } from '@/contexts';
+
 import './ProductListing.scss';
 
 const ProductListing = () => {

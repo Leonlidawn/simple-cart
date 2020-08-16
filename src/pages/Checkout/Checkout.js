@@ -15,6 +15,7 @@ const Checkout = (props) => {
 	const [nameError, setNameError] = useState('');
 	const [emailError, setEmailError] = useState('');
 	const [agreeError, setAgreeError] = useState('');
+	const [payError, setPayError] = useState('');
 
 	const errorMesages = {
 		'name': {
@@ -26,7 +27,10 @@ const Checkout = (props) => {
 		},
 		'agree': {
 			required: 'Please agree the terms and conditions',
-		}
+		},
+		'pay': {
+			faild: 'Sorry, payment failed. Please try again.',
+		},
 	}
 
 	const validateName = (name) => {
@@ -78,18 +82,24 @@ const Checkout = (props) => {
 
 	const pay = (data) => {
 		setLoading(true);
-		axios.post(`${getEnvVariable('BACKEND_URL')}/orders`, data).then(
-			(res)=>{
-				setLoading(false);
-				const {data, orderId, status} =res;
-				if(status === 200){
-					setOrderId(data.orderId);
-					clearCart();
-					props.history.push('./order-confirmation');
-				}else{
+		axios.post(`${getEnvVariable('BACKEND_URL')}/orders`, data, { timeout: 20000 })
+			.then(
+				(res) => {
+					const { data, orderId, status } = res;
+					if (status === 200) {
+						setOrderId(data.orderId);
+						clearCart();
+						props.history.push('./order-confirmation');
+					} else {
+						throw Error('checkout faild');
+					}
 				}
-			}
-		);
+			)
+			.catch((error)=>{
+				setPayError(errorMesages.pay.faild);
+			}).finally(
+				()=>setLoading(false)
+			);
 	}
 
 	return(
@@ -112,6 +122,7 @@ const Checkout = (props) => {
 					<span className="checkout__form__error">{agreeError}</span>
 				</div>
 				<input type="submit" value={`Pay $${getTotalPrice()}`} disabled={isEmpty(cart) || loading} />
+				<span className="checkout__form__error">{payError}</span>
 			</form>
 		</div>
 	)

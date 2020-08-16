@@ -14,7 +14,7 @@ const OrderConfirmation = (props) => {
 			props.history.push('./');
 		}
 		return ()=>setOrderId('');
-	},[])
+	},[orderId])
 
 	return (
 		<div className="order-confirmation">

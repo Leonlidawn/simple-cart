@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import {TimelineMax, Power1} from 'gsap/all';
 import { ReactComponent as CrossCircle } from '@/images/icons/crossCircle.svg';
 import './AddedToCartNotification.scss';
 
