@@ -4,7 +4,7 @@ import { get, isEmpty } from 'lodash';
 const CART = 'cart';
 const getCartSession = () => {
 	const cart = (sessionHelper.getSession(CART));
-	return isEmpty(cart)? {} : cart;
+	return isEmpty(cart) ? {} : cart;
 }
 
 const addToCartSession = (productId) => {
@@ -15,12 +15,12 @@ const addToCartSession = (productId) => {
 
 const reduceFromCartSession = (productId) => {
 	const cart = sessionHelper.getSession(CART);
-	if (!isEmpty(cart)){
+	if (!isEmpty(cart)) {
 		const quantity = cart[productId];
 		if (quantity > 0) {
 			cart[productId] = quantity - 1;
 			sessionHelper.updateSession(CART, cart);
-		}else{
+		} else {
 			delete cart[productId];
 		}
 	}

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { CartContext } from '@/contexts';
-import { ReactComponent as CartIcon } from './cart.svg'
 import { Link } from 'react-router-dom';
+import { CartContext } from '@/contexts';
+import { ReactComponent as CartIcon } from '@/images/icons/cart.svg'
 import './TopMenu.scss';
 
 const TopMenu = () => {

@@ -1,27 +1,27 @@
-import React ,{useContext, useEffect}from 'react';
+import React, { useContext, useEffect } from 'react';
+import { withRouter, Link } from 'react-router-dom';
+import { isEmpty } from 'lodash';
+
 import { CartContext } from '@/contexts';
-import {withRouter} from 'react-router-dom';
 import Star from '@/images/icons/starCircle.svg';
 import './OrderConfirmation.scss';
-import { Link } from 'react-router-dom';
-import { isEmpty } from 'lodash';
 
 const OrderConfirmation = (props) => {
 	const { orderId, setOrderId } = useContext(CartContext);
-	
-	useEffect(()=>{
-		if(isEmpty(orderId)){
+
+	useEffect(() => {
+		if (isEmpty(orderId)) {
 			props.history.push('./');
 		}
-		return ()=>setOrderId('');
-	},[orderId])
+		return () => setOrderId('');
+	}, [])
 
 	return (
 		<div className="order-confirmation">
 			<div className="card">
 				<div className="card__body">
 					<p>
-					<img alt="star badge" src={Star} />
+						<img alt="star badge" src={Star} />
 						<em>Your order has been processed</em>
 					</p>
 					<p>

@@ -7,10 +7,11 @@ const AddedToCartNotification = ({ product, onClose, time }) => {
 	const [timeoutId, setTimeoutId] = useState();
 	const [removed, setRemoved] = useState(false);
 
+	//setting timeout and states to use animation and self destroy.
 	useEffect(
-		() =>{ 
-				setTimeoutId(setTimeout(() =>setRemoved(true),time-500));
-				setTimeoutId(setTimeout(() =>onClose(),time));
+		() => {
+			setTimeoutId(setTimeout(() => setRemoved(true), time - 500));
+			setTimeoutId(setTimeout(() => onClose(), time));
 		}, []
 	)
 	const handleClose = () => {
@@ -19,9 +20,9 @@ const AddedToCartNotification = ({ product, onClose, time }) => {
 	}
 
 	return (
-		<div className={`added-to-cart-notification ${removed? 'added-to-cart-notification--removed':''}`} style={{ '--bg-color': bgColor }}>
+		<div className={`added-to-cart-notification ${removed ? 'added-to-cart-notification--removed' : ''}`} style={{ '--bg-color': bgColor }}>
 			<span>
-				<CrossCircle className="added-to-cart-notification__remove-icon" width={30} height={30} onClick={ handleClose } />
+				<CrossCircle className="added-to-cart-notification__remove-icon" width={30} height={30} onClick={handleClose} />
 				<em>{name}</em>	has been added to your cart.
 			</span>
 		</div>

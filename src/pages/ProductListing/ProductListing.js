@@ -1,9 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { unique } from '@/utils/utils';
+import { CartContext } from '@/contexts';
 import ProductListingCard from './ProductListingCard';
 import Chip from './Chip';
-import { CartContext } from '@/contexts';
-
 import './ProductListing.scss';
 
 const ProductListing = () => {

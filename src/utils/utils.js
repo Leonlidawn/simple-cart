@@ -15,13 +15,13 @@ const unique = (array) => {
  * values configured in .env.development and .env.production files.
  * @param {string} key 
  */
-const getEnvVariable =(key)=>{
+const getEnvVariable = (key) => {
 	const environment = process.env.NODE_ENV;
 	let value = process.env[key];
 
-	if(!isEmpty(value)) return value;
+	if (!isEmpty(value)) return value;
 
-	if( environment === 'development' || environment === 'production'){
+	if (environment === 'development' || environment === 'production') {
 		value = process.env[`REACT_APP_${key}`];
 	}
 	return value;

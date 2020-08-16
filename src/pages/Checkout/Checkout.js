@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
-import { CartContext } from '@/contexts';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { isEmpty } from 'lodash';
 import emailValidator from 'email-validator';
 import axios from 'axios';
+
+import { CartContext } from '@/contexts';
 import Toggle from '@/components/Toggle/Toggle';
-import {getEnvVariable, debounce} from '@/utils/utils';
+import { getEnvVariable } from '@/utils/utils';
 import './Checkout.scss';
 
 const Checkout = (props) => {
@@ -85,7 +86,7 @@ const Checkout = (props) => {
 		axios.post(`${getEnvVariable('BACKEND_URL')}/orders`, data, { timeout: 20000 })
 			.then(
 				(res) => {
-					const { data, orderId, status } = res;
+					const { data, status } = res;
 					if (status === 200) {
 						setOrderId(data.orderId);
 						clearCart();
@@ -95,14 +96,14 @@ const Checkout = (props) => {
 					}
 				}
 			)
-			.catch((error)=>{
+			.catch((error) => {
 				setPayError(errorMesages.pay.faild);
 			}).finally(
-				()=>setLoading(false)
+				() => setLoading(false)
 			);
 	}
 
-	return(
+	return (
 		<div className="checkout">
 			<form id="checkout__form" className="checkout__form" onSubmit={handleOnSubmit}>
 				<label>
@@ -117,7 +118,7 @@ const Checkout = (props) => {
 				<span className="checkout__form__error">{emailError}</span>
 				<div className="condition">
 					<div className="condition__content">
-						<Toggle onClick={()=>setAgree(!agree)}/>	<span>I agree to the terms and conditions</span>
+						<Toggle onClick={() => setAgree(!agree)} />	<span>I agree to the terms and conditions</span>
 					</div>
 					<span className="checkout__form__error">{agreeError}</span>
 				</div>
