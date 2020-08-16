@@ -18,7 +18,6 @@ app.all('*', function (req, res, next) {
 
 //create new order
 app.post('/orders', (req, res) => {
-		console.log('reached')
 	const orderStoragePath = './orders';
 	const makeOrderFilePath = (orderId) => `${orderStoragePath}/order_${orderId}.json`;
 

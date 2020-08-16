@@ -56,6 +56,7 @@ const Checkout = (props) => {
 
 		return agree;
 	}
+
 	const handleOnSubmit = (e) => {
 		e.preventDefault();
 		let { name, email } = e.target;
@@ -93,7 +94,7 @@ const Checkout = (props) => {
 
 	return(
 		<div className="checkout">
-			<form id="checkout__form" className="checkout__form" onSubmit={debounce(handleOnSubmit)}>
+			<form id="checkout__form" className="checkout__form" onSubmit={handleOnSubmit}>
 				<label>
 					Your name
 				</label>

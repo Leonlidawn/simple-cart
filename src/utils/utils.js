@@ -27,15 +27,4 @@ const getEnvVariable =(key)=>{
 	return value;
 }
 
-const debounce = (fn, time=500) => {
-	let timeout;
-	console.log(timeout);
-  return function (...args) {
-    const functionCall = () => fn.apply(this, args);
-
-    clearTimeout(timeout);
-    timeout = setTimeout(functionCall, time);
-  }
-}
-
-export { unique, getEnvVariable, debounce }
+export { unique, getEnvVariable }
