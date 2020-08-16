@@ -20,12 +20,18 @@ const reduceFromCartSession = (productId) => {
 		if (quantity > 0) {
 			cart[productId] = quantity - 1;
 			sessionHelper.updateSession(CART, cart);
+		}else{
+			delete cart[productId];
 		}
 	}
+}
+
+const resetCartSession = () => {
+	sessionHelper.updateSession(CART, {});
 }
 
 const clearCartSession = () => {
 	sessionHelper.removeSession(CART);
 }
 
-export { addToCartSession, reduceFromCartSession, clearCartSession, getCartSession }
+export { addToCartSession, reduceFromCartSession, resetCartSession, clearCartSession, getCartSession }

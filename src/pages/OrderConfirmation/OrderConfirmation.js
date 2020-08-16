@@ -1,9 +1,20 @@
-import React from 'react';
+import React ,{useContext, useEffect}from 'react';
+import { CartContext } from '@/contexts';
+import {withRouter} from 'react-router-dom';
 import Star from '@/images/icons/starCircle.svg';
 import './OrderConfirmation.scss';
 import { Link } from 'react-router-dom';
+import { isEmpty } from 'lodash';
 
-const OrderConfirmation = ({ id }) => {
+const OrderConfirmation = (props) => {
+	const { orderId, setOrderId } = useContext(CartContext);
+	
+	useEffect(()=>{
+		if(isEmpty(orderId)){
+			props.history.push('./');
+		}
+		return ()=>setOrderId('');
+	},[])
 
 	return (
 		<div className="order-confirmation">
@@ -14,7 +25,7 @@ const OrderConfirmation = ({ id }) => {
 						<em>Your order has been processed</em>
 					</p>
 					<p>
-						Your order ID is <em>#{id}</em>
+						Your order ID is <em>#{orderId}</em>
 					</p>
 				</div>
 			</div>
@@ -25,4 +36,4 @@ const OrderConfirmation = ({ id }) => {
 	)
 }
 
-export default OrderConfirmation;
+export default withRouter(OrderConfirmation);

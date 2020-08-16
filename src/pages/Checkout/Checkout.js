@@ -1,28 +1,20 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import { CartContext } from '@/contexts';
+import {withRouter} from 'react-router-dom';
 import { isEmpty } from 'lodash';
 import emailValidator from 'email-validator';
+import axios from 'axios';
 import Toggle from '@/components/Toggle/Toggle';
-import OrderConfirmation from './OrderConfirmation/OrderConfirmation';
+import {getEnvVariable, debounce} from '@/utils/utils';
 import './Checkout.scss';
 
-const Checkout = () => {
-	const { getTotalPrice, cart } = useContext(CartContext);
+const Checkout = (props) => {
+	const { getTotalPrice, cart, clearCart, setOrderId } = useContext(CartContext);
 	const [agree, setAgree] = useState(false);
-
+	const [loading, setLoading] = useState(false);
 	const [nameError, setNameError] = useState('');
 	const [emailError, setEmailError] = useState('');
 	const [agreeError, setAgreeError] = useState('');
-	const [orderId, setOrderId] = useState('');
-
-	useEffect(() => {
-		const form = document.getElementById('checkout__form');
-		if (!isEmpty(form)) {
-			form.addEventListener(
-				"submit", handleOnSubmit, false
-			)
-		}
-	})
 
 	const errorMesages = {
 		'name': {
@@ -83,17 +75,25 @@ const Checkout = () => {
 		}
 	}
 
-	//should be async, and returns a order id
 	const pay = (data) => {
-		console.log(data);
-		setOrderId(11);
-		//TODO implement backend, success
+		setLoading(true);
+		axios.post(`${getEnvVariable('BACKEND_URL')}/orders`, data).then(
+			(res)=>{
+				setLoading(false);
+				const {data, orderId, status} =res;
+				if(status === 200){
+					setOrderId(data.orderId);
+					clearCart();
+					props.history.push('./order-confirmation');
+				}else{
+				}
+			}
+		);
 	}
 
-	//just an expression, in this way form is not rerendered everytime so that focus is preserved
-	const CheckoutForm =(
+	return(
 		<div className="checkout">
-			<form id="checkout__form" className="checkout__form">
+			<form id="checkout__form" className="checkout__form" onSubmit={debounce(handleOnSubmit)}>
 				<label>
 					Your name
 				</label>
@@ -110,18 +110,10 @@ const Checkout = () => {
 					</div>
 					<span className="checkout__form__error">{agreeError}</span>
 				</div>
-				<input type="submit" value={`Pay $${getTotalPrice()}`} />
+				<input type="submit" value={`Pay $${getTotalPrice()}`} disabled={isEmpty(cart) || loading} />
 			</form>
-		</div>)
-	return (
-		<>
-			{
-				isEmpty(orderId)
-					? CheckoutForm
-					: <OrderConfirmation id={orderId} />
-			}
-		</>
+		</div>
 	)
 }
 
-export default Checkout;
+export default withRouter(Checkout);

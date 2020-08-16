@@ -1,10 +1,8 @@
+require('dotenv').config();
 const express = require('express')
 const path = require('path');
-const minimist = require('minimist');
 
-const args = minimist(process.argv.slice(2));
-const PORT = args.port || 80;
-
+const PORT = process.env.PORT;
 
 let app = express()
 app.use(express.static(path.join(__dirname, '..', 'build')));

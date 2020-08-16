@@ -9,7 +9,5 @@
   },
   "author": "Weidong Li (Leon)",
   "license": "ISC",
-  "dependencies": {
-    "uuid": "^8.3.0"
-  }
+  "dependencies": {}
 }

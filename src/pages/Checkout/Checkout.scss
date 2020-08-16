@@ -25,6 +25,9 @@
 				background-color: $BLUE;
 				color:$WHITE;
 			}
+			&:disabled{
+				background-color: $GRAY;
+			}
 			&:focus{
 				outline: none;
 				box-shadow: 0px 0px 6px 0px $LIGHT_BLUE;

@@ -8,12 +8,15 @@ import Checkout from './pages/Checkout/Checkout';
 import AddedToCartNotification from './components/AddedToCartNotification/AddedToCartNotification';
 import ToastMaker from './components/ToastMaker/ToastMaker';
 import { CartContext } from './contexts';
-import { addToCartSession, reduceFromCartSession, clearCartSession, getCartSession } from '@/utils/cartSession';
+import { addToCartSession, reduceFromCartSession, clearCartSession, resetCartSession, getCartSession } from '@/utils/cartSession';
 import { products } from '@/data/products.json';
 import './App.scss';
+import OrderConfirmation from './pages/OrderConfirmation/OrderConfirmation';
 
 function App() {
 	const [cart, setCart] = useState(getCartSession());
+	//orderId is lefted to the top to prevent losing it from rerendering caused by cart update.
+	const [orderId, setOrderId] = useState();
 
 	const addToCart = (productId) =>{
 		addToCartSession(productId);
@@ -43,10 +46,9 @@ function App() {
 		},{}
 	);
 
-	
 	return (
 		<div className="App">
-			<CartContext.Provider value = {{cart, addToCart, reduceFromCart, clearCart, getTotalPrice, products, productTable}}>
+			<CartContext.Provider value = {{cart, addToCart, reduceFromCart, clearCart, getTotalPrice, orderId, setOrderId, products, productTable}}>
 				<header>
 					<TopMenu />
 				</header>
@@ -55,6 +57,7 @@ function App() {
 					<Route exact path="/products" component={()=>PageWrapper('Products',<ProductListing/>)} />
 					<Route exact path="/cart" component={()=>PageWrapper('Cart',<Cart/>)} />
 					<Route exact path="/checkout" component={()=>PageWrapper('Checkout',<Checkout/>)} />
+					<Route exact path="/order-confirmation" component={()=>PageWrapper('OrderConfirmation',<OrderConfirmation/>)} />
 				</Switch>
 			</CartContext.Provider>
 		</div>
