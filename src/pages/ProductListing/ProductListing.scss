@@ -5,6 +5,7 @@
 	&__category-section{
 		@include horizontal-edge-padding;
 		display: flex;
+		flex-wrap: wrap;
 		margin-bottom: 10px;
 		&>div:first-child{
 			.chip{
