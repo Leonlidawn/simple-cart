@@ -1,25 +1,34 @@
 @import '@/commonStyles.scss';
 
 .quantity-button{
-	@include thick-border;
+	// @include thick-border;
 	width: fit-content;
-	border-radius: 11px;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: $YELLOW;
-	$verticle-padding: 4px;
 	user-select: none;
+	
+	$verticle-padding: 4px;
+	$border-radius:11px;
 
 	&__text{
 		padding: $verticle-padding 6px $verticle-padding 12px; 
 		font-family: 'mExtraBold';
 		font-size: 17px;
+		@include thick-border;
+		border-top-left-radius: $border-radius;
+		border-bottom-left-radius: $border-radius;
+		border-right: none;
+		background-color: $YELLOW;
 	}
 	&__icon-area{
 		background-color: white;
 		padding: $verticle-padding 6px; 
+		@include thick-border;
+		border-top-right-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+		border-left: none;
 	}
 	&:hover{
 		cursor: pointer;
